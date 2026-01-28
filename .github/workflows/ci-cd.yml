@@ -19,7 +19,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest tests/ --cov=src
+          python -m pytest tests/
 
       - name: Deploy to Hugging Face
         env:
