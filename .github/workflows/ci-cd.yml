@@ -25,5 +25,8 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          huggingface-cli login --token $HF_TOKEN
-          # Comando per deploy (es. push modello)   
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git remote add huggingface https://$HF_TOKEN@huggingface.co/spaces/samaegi/mlops-ex
+          git push -f huggingface main
+             

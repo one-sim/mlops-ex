@@ -1,16 +1,5 @@
 # mlops-ex
-progetto bla bla bla
-
-# struttura
-mlops/
-├── src/                    # Codice sorgente principale
-├── tests/                  # Test automatici
-├── data/                   # Dati grezzi
-├── results/                # Risultati dell'analisi
-├── .github/workflows/      # Configurazioni per GitHub Actions
-├── README.md               # Descrizione del progetto
-├── .gitignore              # File da escludere da Git
-├── requirements.txt        # Dipendenze (Python) o package.json (Node.js)   
+Progetto profession ai corso mlops
 
 # compito
 Monitoraggio della reputazione online di un’azienda
