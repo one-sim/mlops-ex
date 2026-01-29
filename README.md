@@ -1,6 +1,10 @@
 # mlops-ex
 Progetto profession ai corso mlops
 
+Lanciare il file setup_env.sh per creare un ambiente virtuale .venv in cui verranno installate le librerie di pip presenti el file requirements.txt
+Il notebook analysis.ipynb contiene l'implementazione di sentiment_model.py 
+La cartella tests contiene test_model.py usato per la fase di test con pytest
+
 # compito
 Monitoraggio della reputazione online di un’azienda
 MachineInnovators Inc. è leader nello sviluppo di applicazioni di machine learning scalabili e pronte per la produzione. Il focus principale del progetto è integrare metodologie MLOps per facilitare lo sviluppo, l'implementazione, il monitoraggio continuo e il retraining dei modelli di analisi del sentiment. L'obiettivo è abilitare l'azienda a migliorare e monitorare la reputazione sui social media attraverso l'analisi automatica dei sentiment.
