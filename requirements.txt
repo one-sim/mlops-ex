@@ -3,3 +3,8 @@ torch
 scipy
 datasets
 pytest
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
