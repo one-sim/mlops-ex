@@ -37,6 +37,7 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+Oppure eseguire setup_env.sh
 
 Nota: la prima esecuzione scaricherà il modello `cardiffnlp/twitter-roberta-base-sentiment-latest` che può essere pesante.
 

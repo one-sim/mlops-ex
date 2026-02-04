@@ -7,6 +7,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 # Install packages from requirements.txt
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # Deactivate the environment (optional, for cleanup)
