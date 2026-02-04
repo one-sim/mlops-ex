@@ -10,6 +10,12 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Remove cached packages
+pip cache purge
+
+# Or clean system temp files
+sudo rm -rf /tmp/*   
+
 # Deactivate the environment (optional, for cleanup)
 deactivate
 
