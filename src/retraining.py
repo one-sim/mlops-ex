@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, Tuple, Optional, Any
 from dataclasses import dataclass, asdict
 from datetime import datetime
+import numpy as np
 from .monitoring import PredictionLog
 from .metrics import MetricsTracker, SentimentMetrics
 from .drift_detection import DriftDetector, DriftReport
@@ -131,8 +132,25 @@ class RetrainingManager:
         Args:
             trigger: RetrainingTrigger da salvare
         """
+        def _to_serializable(o):
+            if isinstance(o, dict):
+                return {k: _to_serializable(v) for k, v in o.items()}
+            if isinstance(o, list):
+                return [_to_serializable(v) for v in o]
+            # numpy scalars
+            if isinstance(o, np.generic):
+                return o.item()
+            # numpy arrays
+            if isinstance(o, np.ndarray):
+                return o.tolist()
+            # datetime
+            if isinstance(o, datetime):
+                return o.isoformat()
+            return o
+
+        serializable = _to_serializable(trigger.to_dict())
         with open(self.trigger_file, 'a') as f:
-            f.write(json.dumps(trigger.to_dict()) + '\n')
+            f.write(json.dumps(serializable) + '\n')
     
     def get_trigger_history(self) -> list[RetrainingTrigger]:
         """
