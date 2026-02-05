@@ -1,2 +1,3 @@
 logs
 twitter-roberta-base-sentimenttwitter-roberta-base-sentiment/pytorch_model.bin
+__pycache__/
