@@ -3,10 +3,13 @@ import torch
 from scipy.special import softmax
 from typing import Dict
 
-# Carica modello e tokenizer
-model_name: str = "cardiffnlp/twitter-roberta-base-sentiment-latest"
-tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(model_name)
-model: AutoModelForSequenceClassification = AutoModelForSequenceClassification.from_pretrained(model_name)
+# Local model path
+model_path = "/workspaces/mlops-ex/twitter-roberta-base-sentiment"
+
+# Load from local folder
+tokenizer = AutoTokenizer.from_pretrained(model_path)
+model = AutoModelForSequenceClassification.from_pretrained(model_path)
+
 
 def preprocess(text: str) -> str:
     """Preprocess text (username and link placeholders for @/URLs)
