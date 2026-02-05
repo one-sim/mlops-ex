@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import Dict, Tuple, Optional, Any
 from dataclasses import dataclass, asdict
 from datetime import datetime
-from scipy.spatial.distance import wasserstein_distance
+from scipy.stats import wasserstein_distance
+import numpy as np
 import numpy as np
 from .monitoring import PredictionLog
 from .metrics import MetricsTracker, SentimentMetrics
@@ -209,8 +210,22 @@ class DriftDetector:
         Args:
             report: DriftReport da salvare
         """
+        def _to_serializable(o):
+            if isinstance(o, dict):
+                return {k: _to_serializable(v) for k, v in o.items()}
+            if isinstance(o, list):
+                return [_to_serializable(v) for v in o]
+            if isinstance(o, np.generic):
+                return o.item()
+            if isinstance(o, np.ndarray):
+                return o.tolist()
+            if isinstance(o, datetime):
+                return o.isoformat()
+            return o
+
+        serializable = _to_serializable(report.to_dict())
         with open(self.drift_report_file, 'a') as f:
-            f.write(json.dumps(report.to_dict()) + '\n')
+            f.write(json.dumps(serializable) + '\n')
     
     def get_drift_history(self) -> list[DriftReport]:
         """

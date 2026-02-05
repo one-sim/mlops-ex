@@ -1,4 +1,4 @@
-.venv
-data
 logs
+twitter-roberta-base-sentimenttwitter-roberta-base-sentiment/pytorch_model.bin
 __pycache__
+/twitter-roberta-base-sentiment/pytorch_model.bin
