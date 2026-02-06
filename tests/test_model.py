@@ -265,6 +265,6 @@ class TestDriftDetector:
         # Testa la rilevazione del drift con gli stessi dati
         report = detector.detect_drift(sample_logs)
         
-        assert report.drift_detected is False  # Stesso dataset
+        assert report.drift_detected == False  # Stesso dataset
         assert report.drift_score >= 0.0
         assert report.drift_score <= 1.0

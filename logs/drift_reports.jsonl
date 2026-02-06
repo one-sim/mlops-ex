@@ -1,0 +1,1 @@
+{"timestamp": "2026-02-06T10:47:10.597517", "drift_detected": false, "drift_score": 0.0, "drift_threshold": 0.15, "baseline_distribution": {}, "current_distribution": {}, "average_confidence_change": 0.0, "recommendations": ["Baseline non trovato, creato con i dati attuali"]}

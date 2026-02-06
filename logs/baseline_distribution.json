@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-02-06T10:47:10.597342",
+  "distribution": {
+    "Negativo": 0.39,
+    "Neutro": 0.44,
+    "Positivo": 0.17
+  },
+  "total_samples": 100,
+  "average_confidence": 0.7043270814418793
+}
