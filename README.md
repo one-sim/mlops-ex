@@ -2,6 +2,8 @@
 
 Progetto di esempio per integrare pratiche MLOps in un sistema di analisi del sentiment: modello, monitoraggio continuo, rilevazione del drift e retraining.
 
+⚠️Attenzione: il progetto habisogno del file /workspaces/mlops-ex/twitter-roberta-base-sentiment/pytorch_model.bin uesto supera 100mb e non è incluso nel progetto di github, è possibile scaricalo da qui: https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment
+
 Questo repository implementa:
 - un wrapper per l'inferenza su un modello HuggingFace (in `src/sentiment_model.py`)
 - un sistema di logging delle predizioni (`src/monitoring.py`)
